@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<script src="js/jquery-2.1.3.min.js"></script>
+<link rel="stylesheet" href="css/sample.css">
+<title>じゃんけん</title>
+</head>
+<body>
+
+<header>
+  <h1>じゃんけん</h1>
+</header>
+
+<main>
+  <ul>
+    <li id="gu_btn">グー</li>
+    <li id="cho_btn">チョキ</li>
+    <li id="par_btn">パー</li>
+  </ul>
+  <div>コンピュータの出した手は？「<span id="pc_hands">なに？</span>」</div>
+  <div id="judgment">勝ち</div>
+</main>
+
+<footer></footer>
+<script>
+//じゃんけん用のSCRIPTを書いてください
+
+// #gu_btn, #cho_btn, #par_btn のいずれかが押下されたら、実行する（jQuerryのイベント）
+// コンピュータ手を算出する（ヒント：グーチョキパーを数字に置き換える）
+// 　　ー1-3までの整数をランダムに作る。guは1、choは2、parは3
+// 　　ー1-5の整数に応じて、結果の文字を割り振る
+// コンピュータの手を#pc_hands に出力する（jQuerryのメソッド）
+// 自分の手とコンピュータを比較して、勝敗を決める（ifぶんが使えそう）
+//結果をjudgementに出力する（jQuerryのメソッド）
+  
+
+
+$("#gu_btn").on("click" , function() {
+    const NUM = Math.random();
+const resultNum = Math.ceil(NUM*3);
+
+if(resultNum == 1){
+    $("#pc_hands").html("グー");
+    $("#judgment").html("あいこ");
+}else if(resultNum == 2){
+    $("#pc_hands").html("チョキ");
+    $("#judgment").html("勝ち");
+  }else if(resultNum == 3){
+    $("#pc_hands").html("パー");
+    $("#judgment").html("負け");
+}});    
+
+
+$("#cho_btn").on("click" , function() {
+    const NUM = Math.random();
+const resultNum = Math.ceil(NUM*3);
+
+if(resultNum == 1){
+    $("#pc_hands").html("グー");
+    $("#judgment").html("負け");
+}else if(resultNum == 2){
+    $("#pc_hands").html("チョキ");
+    $("#judgment").html("あいこ");
+}else if(resultNum == 3){
+    $("#pc_hands").html("パー");
+    $("#judgment").html("勝ち");
+}});  
+    
+$("#par_btn").on("click" , function() {
+    const NUM = Math.random();
+const resultNum = Math.ceil(NUM*3);
+
+if(resultNum == 1){
+    $("#pc_hands").html("グー");
+    $("#judgment").html("勝ち");
+}else if(resultNum == 2){
+    $("#pc_hands").html("チョキ");
+    $("#judgment").html("負け");
+}else if(resultNum == 3){
+    $("#pc_hands").html("パー");
+    $("#judgment").html("あいこ");
+}});  
+    
+
+</script>
+</body>
+</html>
